@@ -194,9 +194,9 @@ XPT Forw " extend Forwardable
 extend Forwardable
 
 
-XPT Md " Marshall Dump
+XPT Md " Marshall Dumpfilename
 File.open(`filename^, "wb") { |`file^| Marshal.dump(`obj^, `file^) }
-
+filenamefilename
 
 XPT Ml " Marshall Load
 File.open(`filename^, "rb") { |`file^| Marshal.load(`file^) }
@@ -264,7 +264,7 @@ XSET message|post=RemoveIfUnchanged()
 assert`_`what^
 
 
-XPT attr " attr_** :...
+XPT attr " attr_** :...what
 XSET what=Choose(["accessor", "reader", "writer"])
 XSET what|post=SV("^_$",'','')
 XSET attr*|post=ExpandIfNotEmpty(', :', 'attr*')
@@ -769,7 +769,14 @@ XPT zip " zip\(..) { |..| .. }
 zip(`enum^) { |`row^| `cursor^ }
 
 
+XPT = " <%= .. %>
+<%= `cursor^ %>
 
+XPT % " <% .. %>
+<% `cursor^ %>
+
+XPT end " <% end %>
+<% end %>
 
 " ================================= Wrapper ===================================
 
