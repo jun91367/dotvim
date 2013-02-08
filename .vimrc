@@ -46,7 +46,8 @@ filetype plugin indent on           " 启用自动补全
 
 autocmd BufWritePre * :%s/\s\+$//e  " 避免行尾空白符
 
-
+" ----------------------------------- powerline -------------------------------
+set laststatus=2                    " Always show the statusline
 
 " ----------------------------------- Shortcuts -------------------------------
 nmap <F2> :NERDTreeToggle<CR>
@@ -70,10 +71,10 @@ set tags=/home/dking/.rvm/tags
 " ----------------------------------- Others ----------------------------------
 " highlighting a specified column.
 if exists('+colorcolumn')
-    set colorcolumn=80
+  set colorcolumn=80
 else
-    " Emulate
-    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+  " Emulate
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
 endif
 
 "dictionary
@@ -93,8 +94,8 @@ endif
 
 function ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
-     return "\<Right>"
+	return "\<Right>"
   else
-     return a:char
+	return a:char
   endif
 endf
