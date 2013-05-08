@@ -27,7 +27,7 @@ set autochdir                       " 设定文件浏览器目录为当前目录
 set list                            " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 set novisualbell                    " 不要闪烁
-"set writebackup                     " 无备份文件
+set nowritebackup                   " 无备份文件
 set nobackup
 set foldmethod=manual               " 默认情况下手动折叠
 set iskeyword+=_,$,@,%,#,-          " 带有如下符号的单词不要被换行分割
@@ -46,6 +46,7 @@ filetype plugin indent on           " 启用自动补全
 
 autocmd BufWritePre * :%s/\s\+$//e  " 避免行尾空白符
 
+
 " ----------------------------------- powerline -------------------------------
 set laststatus=2                    " Always show the statusline
 
@@ -53,20 +54,24 @@ set laststatus=2                    " Always show the statusline
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F5> gg=G <CR>
 
-
+nmap ,v "+p
+vmap ,c "+yy
+nmap ,c "+yy
 " ----------------------------------- NERDTree --------------------------------
 let NERDChristmasTree=1
 let NERDTreeWinSize=31
 
-
 " ----------------------------------- CtrlP -----------------------------------
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$',
+  \ }
 
 " ----------------------------------- Ctags -----------------------------------
 set tags=/home/dking/works/tags
 set tags=/home/dking/.rvm/tags
-
 
 " ----------------------------------- Others ----------------------------------
 " highlighting a specified column.
