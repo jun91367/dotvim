@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/dking/works/ji_hu_office'
-let g:netrw_dirhist_2='/home/dking/works/ji_hu_office/config'
-let g:netrw_dirhist_3='/home/dking/works/isozaki/config/deploy'
-let g:netrw_dirhist_4='/home/dking/works/zojirushi_botique/config/deploy'
-let g:netrw_dirhist_5='/home/dking/works/ariafina/app/models'
